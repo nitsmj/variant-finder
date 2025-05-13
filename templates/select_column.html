@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Column</title>
+</head>
+<body>
+    <h2>Select column to compare HPO terms:</h2>
+    <form method="POST">
+        <select name="column">
+            {% for col in columns %}
+            <option value="{{ col }}">{{ col }}</option>
+            {% endfor %}
+        </select><br><br>
+        <button type="submit">Process</button>
+    </form>
+</body>
+</html>

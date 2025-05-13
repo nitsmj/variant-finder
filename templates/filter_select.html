@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Filters</title>
+</head>
+<body>
+    <h2>Select columns to filter:</h2>
+    <form method="POST">
+        {% for col in columns %}
+        <input type="checkbox" name="columns" value="{{ col }}">{{ col }}<br>
+        {% endfor %}
+        <button type="submit">Done</button>
+    </form>
+</body>
+</html>

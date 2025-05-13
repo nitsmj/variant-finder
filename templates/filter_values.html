@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Filter: {{ column }}</title>
+</head>
+<body>
+    <h2>Filter by {{ column }}</h2>
+    <form method="POST">
+        {% if is_numeric %}
+            <select name="op">
+                <option value="lt">Less Than</option>
+                <option value="gt">Greater Than</option>
+                <option value="lte">Less Than or Equal</option>
+                <option value="gte">Greater Than or Equal</option>
+            </select>
+            <input type="number" step="any" name="value" required>
+        {% else %}
+            {% for val in values %}
+                <input type="checkbox" name="values" value="{{ val }}">{{ val }}<br>
+            {% endfor %}
+        {% endif %}
+        <button type="submit">Apply Filter</button>
+    </form>
+    <a href="/download" style="position: absolute; top: 10px; right: 10px;">Download Current File</a>
+</body>
+</html>
